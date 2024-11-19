@@ -38,7 +38,7 @@ sudo nano .config/wayfire.ini
 panel = wfrespawn wf-panel-pi
 background = wfrespawn pcmanfm --desktop --profile LXDE-pi
 xdg-autostart = lxsession-xdg-autostart
-chromium = chromium-browser https://gongdo.kr https://time.is/Seoul --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized
+chromium = chromium-browser https://gongdo.kr http://127.0.0.1:5000 --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized
 switchtab = bash ~/switchtab.sh
 screensaver = false
 dpms = false
@@ -80,10 +80,25 @@ while true; do
 done
 ```
 - Ctrl + X -> Y -> Enter
-- 재부팅 
 
+5. app.py의 파일을 자동 실행하도록 하기
+```bash
+sudo nano /etc/rc.local  
+```
 
+rc.local에 아래 파일 추가
+```bash 
+sudo python3 /home/pi/webapp/app.py &
+```
 
+6. 데스크톱 환경을 wayland로 변경하기 
+```bash
+sudo raspi-config
+```
+   1. Advanved option 선택  
+   2. Wayland를 선택한 후 wayfire선택
+   3. Finish 후 재부팅 
+   
 
 # 참고 
 - [How to use a Raspberry Pi in kiosk mode](https://www.raspberrypi.com/tutorials/how-to-use-a-raspberry-pi-in-kiosk-mode/)
