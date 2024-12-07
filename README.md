@@ -1,6 +1,6 @@
 # 🎬 공학도서관 오리지널 컨텐츠
 
-# 🖥️ 라즈베리파이 키오스크 만들기
+# 🖥️ 라즈베리파이 광고판 만들기
 
 ![kiosk](https://www.raspberrypi.com/tutorials/tutorials/images/KIOSK-800x533.jpg)
 
