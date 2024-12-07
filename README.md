@@ -42,7 +42,7 @@
 panel = wfrespawn wf-panel-pi
 background = wfrespawn pcmanfm --desktop --profile LXDE-pi
 xdg-autostart = lxsession-xdg-autostart
-chromium = chromium-browser https://gongdo.kr https://127.0.0.1:5000 --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized
+chromium = chromium-browser https://gongdo.kr http://127.0.0.1:5000 --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized
 switchtab = bash ~/switchtab.sh
 screensaver = false
 dpms = false
@@ -74,6 +74,7 @@ while true; do
   sleep 10
 done
 ```
+<<<<<<< HEAD
 
 ## 🚀 시작하기
 1. wtype 설치하기
@@ -196,4 +197,26 @@ done
 > - 자동 실행 스크립트의 권한 설정을 잊지 마세요.
 
 이것으로 전체 README가 완성되었습니다. 수정이나 보완이 필요한 부분이 있을까요?
+=======
+- Ctrl + X -> Y -> Enter
+
+5. app.py의 파일을 자동 실행하도록 하기
+```bash
+sudo nano /etc/rc.local  
+```
+
+rc.local에 아래 파일 추가
+```bash 
+sudo python3 /home/pi/webapp/app.py &
+```
+
+6. 데스크톱 환경을 wayland로 변경하기 
+```bash
+sudo raspi-config
+```
+   1. Advanved option 선택  
+   2. Wayland를 선택한 후 wayfire선택
+   3. Finish 후 재부팅 
+   
+>>>>>>> a271d313658a89bd1d0e0cb812e8e7b3efddada0
 
